@@ -1,5 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+/* 1. Target the root and every single element */
+html, body, * {
+    /* Hide for Firefox */
+    scrollbar-width: none !important;
+    /* Hide for IE/Edge */
+    -ms-overflow-style: none !important;
+}
+
+/* 2. Target the Webkit engine (Chrome, Safari, new Edge) */
+::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+}
+
+/* 3. Specific fix for the 'track' and 'thumb' just in case */
+::-webkit-scrollbar-track, 
+::-webkit-scrollbar-thumb {
+    background: transparent !important;
+    border: none !important;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,8 +36,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
+    padding: 40px 0;
+
+    /* Hides scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
+}
+
+/* Hides scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
 }
 
 /* Confetti Animation */
