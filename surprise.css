@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Confetti Animation */
+.confetti {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #f0f;
+    top: -10%;
+    animation: confetti-fall 3s linear infinite;
+}
+
+.confetti:nth-child(1) {
+    left: 10%;
+    background: #ff6b6b;
+    animation-delay: 0s;
+}
+
+.confetti:nth-child(2) {
+    left: 20%;
+    background: #4ecdc4;
+    animation-delay: 0.5s;
+}
+
+.confetti:nth-child(3) {
+    left: 30%;
+    background: #ffe66d;
+    animation-delay: 1s;
+}
+
+.confetti:nth-child(4) {
+    left: 40%;
+    background: #95e1d3;
+    animation-delay: 1.5s;
+}
+
+.confetti:nth-child(5) {
+    left: 50%;
+    background: #f38181;
+    animation-delay: 2s;
+}
+
+.confetti:nth-child(6) {
+    left: 60%;
+    background: #aa96da;
+    animation-delay: 0.3s;
+}
+
+.confetti:nth-child(7) {
+    left: 70%;
+    background: #fcbad3;
+    animation-delay: 0.8s;
+}
+
+.confetti:nth-child(8) {
+    left: 80%;
+    background: #a8e6cf;
+    animation-delay: 1.3s;
+}
+
+.confetti:nth-child(9) {
+    left: 90%;
+    background: #ffd3b6;
+    animation-delay: 1.8s;
+}
+
+.confetti:nth-child(10) {
+    left: 95%;
+    background: #ffaaa5;
+    animation-delay: 2.3s;
+}
+
+@keyframes confetti-fall {
+    0% {
+        top: -10%;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 110%;
+        transform: rotate(720deg);
+    }
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Diamond Blocks */
+.diamond-block {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.diamond-block:nth-child(1) {
+    top: 5%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.diamond-block:nth-child(2) {
+    top: 10%;
+    right: 10%;
+    animation-delay: 0.5s;
+}
+
+.diamond-block:nth-child(3) {
+    bottom: 20%;
+    left: 8%;
+    animation-delay: 1s;
+}
+
+/* Emerald Blocks */
+.emerald-block {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #50C878 0%, #2E8B57 100%);
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.emerald-block:nth-child(5) {
+    bottom: 10%;
+    right: 15%;
+    animation-delay: 0.3s;
+}
+
+.emerald-block:nth-child(6) {
+    top: 50%;
+    right: 5%;
+    animation-delay: 0.8s;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1) rotate(180deg);
+        opacity: 0.8;
+    }
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.98);
+    padding: 50px 40px;
+    border: 5px solid #000;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.4);
+    max-width: 650px;
+    margin: 0 20px;
+}
+
+.minecraft-title {
+    font-size: 28px;
+    color: #FFD700;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 0 #FFA500;
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 3px 3px 0 #FFA500, 0 0 10px #FFD700;
+    }
+    50% {
+        text-shadow: 3px 3px 0 #FFA500, 0 0 20px #FFD700, 0 0 30px #FFD700;
+    }
+}
+
+.achievement-box {
+    background: #8B4513;
+    border: 4px solid #000;
+    padding: 20px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.trophy {
+    font-size: 50px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.achievement-text {
+    font-size: 16px;
+    color: #FFD700;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #E91E63;
+    margin: 30px 0;
+    line-height: 1.8;
+}
+
+.heart-container {
+    margin: 30px 0;
+    font-size: 50px;
+}
+
+.heart {
+    display: inline-block;
+    margin: 0 15px;
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+.heart:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.heart:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+.message {
+    font-size: 14px;
+    color: #555;
+    line-height: 2;
+    margin: 30px 0;
+}
+
+.pixel-hearts {
+    margin-top: 30px;
+    font-size: 40px;
+}
+
+.pixel-hearts span {
+    display: inline-block;
+    margin: 0 10px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.pixel-hearts span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.pixel-hearts span:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .minecraft-title {
+        font-size: 20px;
+    }
+    
+    .subtitle {
+        font-size: 16px;
+    }
+    
+    .achievement-text {
+        font-size: 12px;
+    }
+    
+    .message {
+        font-size: 11px;
+    }
+    
+    .content {
+        padding: 30px 20px;
+    }
+    
+    .diamond-block, .emerald-block {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .minecraft-title {
+        font-size: 16px;
+    }
+    
+    .subtitle {
+        font-size: 13px;
+    }
+    
+    .achievement-text {
+        font-size: 10px;
+    }
+    
+    .trophy {
+        font-size: 35px;
+    }
+    
+    .heart-container {
+        font-size: 35px;
+    }
+    
+    .message {
+        font-size: 10px;
+    }
+}
