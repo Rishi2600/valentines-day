@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(to bottom, #87CEEB 0%, #87CEEB 70%, #8B7355 70%, #8B7355 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* Minecraft Grass Blocks */
+.grass-block {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(to bottom, #7CB342 0%, #7CB342 60%, #8D6E63 60%, #8D6E63 100%);
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+.grass-block:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.grass-block:nth-child(2) {
+    top: 20%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.grass-block:nth-child(3) {
+    bottom: 15%;
+    left: 15%;
+    animation-delay: 2s;
+}
+
+/* Minecraft Dirt Blocks */
+.dirt-block {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #8D6E63;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+    animation: float 4s ease-in-out infinite;
+}
+
+.dirt-block:nth-child(5) {
+    top: 60%;
+    right: 10%;
+    animation-delay: 0.5s;
+}
+
+.dirt-block:nth-child(6) {
+    bottom: 10%;
+    right: 20%;
+    animation-delay: 1.5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px 40px;
+    border: 5px solid #000;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.4);
+    max-width: 600px;
+    margin: 0 20px;
+}
+
+.minecraft-title {
+    font-size: 24px;
+    color: #2E7D32;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 0 #C8E6C9;
+    line-height: 1.6;
+}
+
+.heart-container {
+    margin: 30px 0;
+    font-size: 40px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.heart {
+    display: inline-block;
+    margin: 0 10px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.heart:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.heart:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px 0 20px 0;
+    flex-wrap: wrap;
+}
+
+.btn {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    padding: 20px 40px;
+    border: 4px solid #000;
+    cursor: pointer;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
+    transition: all 0.1s;
+    text-transform: uppercase;
+}
+
+.btn:active {
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+    transform: translate(3px, 3px);
+}
+
+.yes-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.yes-btn:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+.no-btn {
+    background: #F44336;
+    color: white;
+    position: relative;
+}
+
+.no-btn:hover {
+    background: #da190b;
+}
+
+.subtitle {
+    font-size: 12px;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .minecraft-title {
+        font-size: 18px;
+    }
+    
+    .btn {
+        font-size: 14px;
+        padding: 15px 30px;
+    }
+    
+    .content {
+        padding: 30px 20px;
+    }
+    
+    .grass-block, .dirt-block {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .minecraft-title {
+        font-size: 14px;
+    }
+    
+    .btn {
+        font-size: 12px;
+        padding: 12px 24px;
+    }
+    
+    .heart-container {
+        font-size: 30px;
+    }
+    
+    .subtitle {
+        font-size: 10px;
+    }
+}
