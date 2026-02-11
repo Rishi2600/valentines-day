@@ -1,0 +1,5 @@
+This is the typical Valentine's project
+Oldest trick in the book, but still was fun to make, especially with all those maths that were used in this project. Good for building fundamentals.
+I used pure DOM manipulation and pure CSS to make it happen (so yk I put in the effort)
+Go send this to you valentine and make them feel you are a genius prick
+I'll be spamming this to every tech girl too lol
